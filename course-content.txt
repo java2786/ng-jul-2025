@@ -1,0 +1,18 @@
+Angular
+	- Create project
+		- CLI
+	- Project Structure
+	- main.ts
+	- package.json
+	- Modules / Bootstrap
+		- Component
+		- life cycle hooks
+		- string interpolation
+		- data binding
+	- Directives
+	- Pipes
+	- Froms
+	- DI - services
+	- Ajax - api - http
+	- Routing
+	- Testing

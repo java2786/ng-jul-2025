@@ -1,0 +1,20 @@
+JavaScript -> 
+    writer/editor => notepad, texpad, vscode, sublime text...
+        VSCode + plugin
+    run -> browser
+HTML + CSS => Application
+Typescript -> 
+Angular ->
+
+JavaScript -> EcmaScript = ES2015, JS6
+
+function student(n){
+    this.name = n;
+}
+
+class Student{
+    constructor(n){
+        this.name = n;
+    }
+}
+
