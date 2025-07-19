@@ -1,0 +1,12 @@
+Bill generate:
+    For first 100 units, pay 1.5 per unit
+    For second 100 units, pay 2.5 per unit
+    Beyond 200 units, pay 3.5 per unit
+
+Output:
+    Consumed units: 250
+    Bill amount: 575
+
+Output:
+    Consumed units: 120
+    Bill amount: 200

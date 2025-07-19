@@ -19,3 +19,20 @@ if(num%2 == 0){
 } else {
     console.log(`${num} is odd number`)
 }
+
+// 7 Input marks of 3 subjects and print average, percentage.
+let a = parseInt(prompt("Enter Hindi marks"));
+let b = parseInt(prompt("Enter English marks"));
+let c = prompt("Enter Math marks")
+c = +c;
+let d = prompt("Enter Science marks")
+d = parseInt(d)
+
+let max = 150;
+
+sum = a+b+c+d;
+average = sum/4;
+percentage = sum/(max*4) * 100;
+
+console.log("Average: "+average);
+console.log("Percentage: "+percentage);

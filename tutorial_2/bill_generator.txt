@@ -1,0 +1,21 @@
+*********** My Restaurent ***********
+
+Our menu card:
+1. Dosa     - Rs. 75/-
+2. Idli     - Rs. 25/-
+3. Tea      - Rs. 10/-
+
+Make order:
+Enter quantity for Dosa: 2
+Enter quantity for Idli: 1
+Enter quantity for Tea: 0
+
+Final Bill:
+1. Dosa     => Rs. 75/- * 2 = 150/-
+2. Idli     => Rs. 25/- * 1 = 25/-
+3. Tea      => Rs. 10/- * 0 = 0/-
+-----------------------------------
+Total Amount                = Rs. 175/-
+
+******** Thank you to visit. ********
+
