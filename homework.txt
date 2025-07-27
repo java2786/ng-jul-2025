@@ -1,0 +1,208 @@
+1. Basics – Printing, Variables, Data Types
+    Print your name, college name, and city using three variables.
+    Store marks of three subjects and print the total.
+    Declare a Celsius temperature variable and print: “Today's temperature is 36°C”
+    Create variables name, age, and city. Print a self-introduction.
+    Given price = 299.99 and quantity = 3, calculate the total bill.
+2. Input, Arithmetic Operators, Type Conversion
+    Take name and age as input and print them in a sentence.
+    Take two numbers and print sum, difference, product, and quotient.
+    Input radius of a circle and calculate area and perimeter.
+    Input two numbers and swap them using a third variable.
+    Take marks in 5 subjects and print total, average, and percentage.
+3. Conditional Statements (if, else-if, nested if)
+    Check if a number is positive, negative, or zero.
+    Check if someone is eligible for voting (age >= 18).
+    Find the largest of two and three numbers.
+    Grading system:
+        90+ → Grade A
+        75–89 → Grade B
+        50–74 → Grade C
+        <50 → Fail
+    Check if a year is a leap year.
+4. Logical Operators, Nested If, Switch/Case
+Check if a number is divisible by both 3 and 5.
+Input a character and check if it's a vowel or consonant.
+Input day number (1 to 7) and print the corresponding day using switch-case.
+Student eligibility: Attendance percentage >= 75%.
+Password checker: enter password and confirm password.
+5. Loops (for, while)
+Print numbers from 1 to 50.
+Print multiplication table of a number.
+Print sum of first N natural numbers.
+Print all even numbers from 1 to 100.
+Print this pattern using loops:
+    *
+    * *
+    * * *
+    * * * *
+
+          *
+        * *
+      * * *
+    * * * *
+
+    1
+    2 2
+    3 3 3
+    4 4 4 4
+
+          1
+        1 2
+      1 2 3
+    1 2 3 4
+
+    * * * *
+      * * *
+        * *
+          *
+
+    * * * *
+    * * *
+    * *
+    *
+
+    * * * * * * * *
+    * * *     * * * 
+    * *         * *
+    *             *
+
+
+
+     * * * *
+    *       *
+    *       *
+    *       *
+     * * * *
+    *       *
+    *       *
+    *       *
+     * * * *
+
+     * * * *
+            *
+            *
+            *
+     * * * *
+            *
+            *
+            *
+     * * * *
+
+     * * * *
+    *        
+    *        
+    *        
+     * * * *
+            *
+            *
+            *
+     * * * *
+
+    * * * * *
+            *
+            *
+            *
+            *
+            *
+            *
+            *
+     
+
+6. Math & Condition-Based Problems
+Check if a number is even or odd.
+Check if a number has exactly 3 digits.
+Check if a number is prime.
+Print all prime numbers from 1 to N.
+Armstrong number check (e.g., 153 = 1³ + 5³ + 3³).
+Perfect number check (sum of factors = number).
+Strong number check (sum of digit factorials = number).
+FizzBuzz Game – Leetcode Problem 412.
+Check if 3 sides form a right triangle using H² = B² + P².
+Manually convert a decimal number to binary (no bin() function).
+7. Digit-Based Problems
+Count digits in an input number.
+Reverse a number (e.g., input 123 → output 321).
+Check if a number is a palindrome.
+Sum all digits of a number.
+Print sum of squares of digits of a number.
+Count how many even and odd digits are present in a number.
+Find product of all digits in a number.
+Find the digital root (sum digits until single digit remains).
+Count how many times each digit (0–9) appears in a number.
+8. Sequences and Series
+Print Fibonacci series up to N terms.
+Print squares of numbers from 1 to N.
+Print cubes of numbers from 1 to N.
+Print sum of squares from 1 to N.
+Print all numbers, even numbers, and sum from 1 to N.
+9. Billing and Simulation Projects
+Bill calculator (based on quantity or units).
+Simple calculator (addition, subtraction, multiplication, division).
+Traffic light signal simulation (input color → print action).
+ATM simulation:
+Balance check
+Deposit
+Withdrawal
+Pin authentication
+10. Arrays/Lists – Basics
+Create a list of 5 integers and print each element.
+Input 10 numbers into a list and print in reverse.
+Find sum of all elements in the list.
+Count how many even and odd numbers are in a list.
+Find max and min in a list.
+Calculate average of list elements.
+Count how many elements are greater than a given value X.
+Search for an element using linear search.
+Print all elements at even indexes.
+Print the list in reverse without using built-in reverse().
+11. Arrays/Lists – Insert, Delete, Modify
+Insert an element at the beginning and end of a list.
+Delete the last element from a list.
+Delete element at a specific index.
+Replace all occurrences of a value with another.
+Input 5 numbers and create a list of their squares.
+Swap first and last element of a list.
+Remove all negative numbers from a list.
+Double each value and store in a new list.
+Create a list with only even elements from original list.
+Create a list of absolute values from original list.
+12. String Handling Problems
+Input a string and print its reverse.
+Check if a string is palindrome.
+Count vowels and consonants.
+Convert string to uppercase and lowercase.
+Frequency of each character.
+Remove white spaces.
+Replace vowels with *.
+Check if two strings are anagrams.
+Find longest word in a sentence.
+13. Function-Based Problems
+Function to find factorial.
+Function to check prime number.
+Function for Fibonacci series.
+Function to find GCD of two numbers.
+Function to count digits.
+Function to validate password strength.
+14. Nested Loops – Pattern Printing
+Right angle triangle pattern.
+Number triangle:
+1
+1 2
+1 2 3
+Inverted number triangle.
+Pyramid and diamond patterns.
+Pascal’s triangle up to N rows.
+15. Recursion Practice
+Factorial using recursion.
+Fibonacci using recursion.
+GCD and LCM using recursion.
+Reverse string using recursion.
+Sum of digits using recursion.
+16. Date and Time Manipulation
+Print current date and time.
+Calculate age from date of birth.
+Day of the week for a given date.
+Add N days to current date.
+Format date in multiple formats.
+
