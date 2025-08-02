@@ -1,0 +1,16 @@
+Print your name 5 times 
+
+Print number from 1 - 10
+
+Print sum of all numbers from 1 - 10
+
+Print sum of all even numbers from 1 - 10
+
+Print sum of all odd numbers from 1 - 10
+
+Count evens and odds from 1 - 11
+
+Factorial of given number 
+
+Print table of number
+
