@@ -1,0 +1,21 @@
+Install nodejs and verify if successfully installed
+-> node -v 
+-> npm -v 
+
+
+Install angluar cli (ng)
+-> npm i -g @angular/cli
+
+Create angular project 
+-> ng new project_name
+
+Open project in vscode
+-> code project_name
+
+Start angular project
+-> npm run start
+
+Test
+browser -> http://localhost:4200/
+
+src/app/app.html - edit
