@@ -1,6 +1,9 @@
-import { bootstrapApplication } from '@angular/platform-browser';
-import { appConfig } from './app/app.config';
-import { App } from './app/app';
+// console.log("hello");
 
-bootstrapApplication(App, appConfig)
-  .catch((err) => console.error(err));
+import { ApplicationConfig, Component } from "@angular/core";
+import { bootstrapApplication } from "@angular/platform-browser";
+import StartApp from "./my_app/start";
+
+
+const myConfig: ApplicationConfig = {providers: []}
+bootstrapApplication(StartApp, myConfig)
