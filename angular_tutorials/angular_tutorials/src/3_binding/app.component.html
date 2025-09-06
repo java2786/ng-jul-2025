@@ -1,0 +1,10 @@
+<h1>Greet Component</h1>
+<h3>I am {{name}} from {{address}}.</h3>
+
+<input [value]="name"/>
+
+<br/><br/><br/><br/><br/>
+
+<input value="demo" #myInput (keyup)="greet(myInput.value)" />
+
+{{myInput.value}}
