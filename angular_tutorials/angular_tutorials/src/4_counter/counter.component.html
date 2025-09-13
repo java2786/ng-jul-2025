@@ -1,0 +1,18 @@
+<h2>Coutner Page</h2>
+
+<!-- interpolation -->
+Current Value: {{number}}
+
+<br/>
+
+<!-- property binding [] -->
+ <input type="number" [value]="number" #inputElement (change)="updateNumber(+inputElement.value)">
+<br/>
+
+<!-- event binding -->
+<!-- <button (click)="increment()">Increase</button>
+<button (click)="decrement()">Decrease</button>
+<button (click)="reset()">Reset</button> -->
+<app-button (hangleclick)="increment()" [text]="'Increase'" ></app-button>
+<app-button (hangleclick)="decrement()" [text]="'Decrease'" ></app-button>
+<app-button (hangleclick)="reset()" [text]="'Reset'" ></app-button>

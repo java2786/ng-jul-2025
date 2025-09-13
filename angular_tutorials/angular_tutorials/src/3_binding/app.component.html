@@ -1,10 +1,13 @@
 <h1>Greet Component</h1>
+<!-- string interpolation -->
 <h3>I am {{name}} from {{address}}.</h3>
 
+<!-- property binding -->
 <input [value]="name"/>
 
 <br/><br/><br/><br/><br/>
 
+<!-- event binding -->
 <input value="demo" #myInput (keyup)="greet(myInput.value)" />
 
 {{myInput.value}}
