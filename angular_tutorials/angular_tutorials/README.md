@@ -18,6 +18,10 @@ Angular CLI includes powerful code scaffolding tools. To generate a new componen
 
 ```bash
 ng generate component component-name
+ng generate c component-name
+ng g component component-name
+ng g c component-name
+
 ```
 
 For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:

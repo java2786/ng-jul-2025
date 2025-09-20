@@ -1,0 +1,30 @@
+<div>
+    <button (click)="reset()">Reset</button>
+    <br/>
+    <input readonly type="text" [value]="result"/>
+    <br/>
+    <div>
+        <button (click)="update($event)">1</button>
+        <button (click)="update($event)">2</button>
+        <button (click)="update($event)">3</button>
+        <button (click)="update($event)">+</button>
+    </div>
+    <div>
+        <button (click)="update($event)">4</button>
+        <button (click)="update($event)">5</button>
+        <button (click)="update($event)">6</button>
+        <button (click)="update($event)">-</button>
+    </div>
+    <div>
+        <button (click)="update($event)">7</button>
+        <button (click)="update($event)">8</button>
+        <button (click)="update($event)">9</button>
+        <button (click)="update($event)">*</button>
+    </div>
+    <div>
+        <button (click)="update($event)">.</button>
+        <button (click)="update($event)">0</button>
+        <button (click)="update($event)">=</button>
+        <button (click)="update($event)">/</button>
+    </div>
+</div>
