@@ -1,0 +1,27 @@
+<h2>Login</h2>
+
+<form [formGroup]="userForm" (ngSubmit)="onLogin()" >
+    <div>
+        <label for="">Email</label><br />
+        <input type="text" formControlName="email">
+        <span>Invalid email</span>
+    </div>
+    <div>
+        <label for="">Password</label><br />
+        <input type="text" formControlName="password">
+    </div>
+<div>
+        <div>
+        <input type="checkbox" id="rem">
+        <label for="rem">Remember</label>
+    </div>    
+    <div>
+        <a href="">Forgot password?</a>
+    </div>
+</div>
+
+<div>
+    <button>SUBMIT</button>
+    <a href="">Create account</a>
+</div>
+</form>
