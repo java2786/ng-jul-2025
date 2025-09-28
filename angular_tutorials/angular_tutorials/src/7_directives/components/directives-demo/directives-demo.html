@@ -1,0 +1,22 @@
+<h1>directives-demo</h1>
+<hr/>
+<h2>Structural Directives</h2>
+@if(num%2==0){
+    <p>Even Number</p>
+}
+    <p *ngIf="num%2!=0">Odd Number</p>
+<hr/>
+<button (click)="increment()">{{num}}</button>
+<h2>NgClass</h2>
+
+<p class="green large">This is a message</p>
+
+<p [ngClass]="currentClasses">This is a message - with ng class</p>
+
+<h2>NgStyle</h2>
+<p [ngStyle]="{color: 'magenta', 'font-size':num+'px'}">This is style demo</p>
+<h2>NgModel</h2>
+<input type="number" [(ngModel)]="num"/>
+<hr/>
+
+<hr/>

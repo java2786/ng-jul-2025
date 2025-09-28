@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -10,12 +10,16 @@ import { BrowserModule } from '@angular/platform-browser';
   templateUrl: './login-form.html',
   styleUrl: './login-form.scss',
 })
-export class LoginForm {
+export class LoginForm implements OnInit {
   userForm:FormGroup;
 
   // DI
   constructor(private fb:FormBuilder){
-    this.userForm = this.fb.group({
+    this.userForm = new FormGroup({});
+  }
+
+  ngOnInit(){
+      this.userForm = this.fb.group({
       email: ['', [Validators.email, Validators.required]],
       password: ['', [Validators.required, Validators.minLength(8)]]
     })

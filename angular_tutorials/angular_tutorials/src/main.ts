@@ -2,7 +2,9 @@
 
 import { ApplicationConfig, Component } from "@angular/core";
 import { bootstrapApplication } from "@angular/platform-browser";
-import AppComponent from "./5_calculator/app.component";
+import AppComponent from "./7_directives/app.component";
+// import AppComponent from "./6_login_form/app.component";
+// import AppComponent from "./5_calculator/app.component";
 // import AppComponent from "./4_counter/app.component";
 // import AppComponent from "./3_binding/app.component";
 // import AppComponent from "./2_greet/app.component";
