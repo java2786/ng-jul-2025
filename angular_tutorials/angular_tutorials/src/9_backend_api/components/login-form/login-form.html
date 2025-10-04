@@ -1,0 +1,47 @@
+<h2>Login</h2>
+<form [formGroup]="userForm" (ngSubmit)="onLogin()">
+    <div>
+        <label for="">Email</label><br />
+        <input type="text" formControlName="email">
+        @if(userForm.get('email')?.invalid && userForm.get('email')?.pristine==false){
+        <span>
+            @if(userForm.get('email')?.errors?.['email']){
+            <span>Invalid Email Format</span>
+            }
+            @if(userForm.get('email')?.errors?.['required']){
+            <span>Email is required</span>
+            }
+        </span>
+        }
+    </div>
+    <div>
+        <label for="">Password</label><br />
+        <input type="text" formControlName="password">
+        @if(userForm.get('password')?.invalid && userForm.get('password')?.pristine==false){
+        <span>
+            @if(userForm.get('password')?.errors?.['minlength']){
+            <span>Password must be at least 8 chars</span>
+            }
+            @if(userForm.get('password')?.errors?.['required']){
+            <span>Password is required</span>
+            }
+        </span>
+        }
+
+    </div>
+    <div>
+        <div>
+            <input type="checkbox" id="rem">
+            <label for="rem">Remember</label>
+        </div>
+        <div>
+            <a href="">Forgot password?</a>
+        </div>
+    </div>
+
+    <div>
+        <button [disabled]="userForm.invalid">SUBMIT</button>
+        <h4 style="text-align:center;color:magenta">{{errorMessage}}</h4>
+        <a href="">Create account</a>
+    </div>
+</form>
