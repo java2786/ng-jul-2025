@@ -39,7 +39,10 @@ export class LoginForm implements OnInit {
     // }, 4000);
 
 fetch('https://fakestoreapi.com/users/2')
-  .then(response => response.json())
+  // .then(response => response.json())
+  .then(function(response){
+    return response.json();
+  })
   .then(data => {
     console.log(data)
     this.userForm.reset()
@@ -48,7 +51,6 @@ fetch('https://fakestoreapi.com/users/2')
     console.log(err)
     this.errorMessage = err.message;
   })
-    
   }
 }
 

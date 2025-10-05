@@ -1,0 +1,12 @@
+<p>ajax-demo works!</p>
+
+<h1>Products: {{products.length}}</h1>
+
+<button (click)="loadProducts()">Load</button>
+
+@if(products.length==0){
+<p>No data found</p>
+}
+@if(products.length>0){
+<p>Products found</p>
+}

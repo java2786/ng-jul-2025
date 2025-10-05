@@ -2,7 +2,9 @@
 
 import { ApplicationConfig, Component } from "@angular/core";
 import { bootstrapApplication } from "@angular/platform-browser";
-import AppComponent from "./9_backend_api/app.component";
+import AppComponent from "./10_http_ajax/app.component";
+import myConfig from "./app.config";
+// import AppComponent from "./9_backend_api/app.component";
 // import AppComponent from "./8_login_form/app.component";
 // import AppComponent from "./7_directives/app.component";
 // import AppComponent from "./6_login_form/app.component";
@@ -16,4 +18,5 @@ import AppComponent from "./9_backend_api/app.component";
 // const myConfig:ApplicationConfig = {providers: []}
 // bootstrapApplication(AppComponent, myConfig)
 
-bootstrapApplication(AppComponent);
+// bootstrapApplication(AppComponent);
+bootstrapApplication(AppComponent, myConfig);
