@@ -1,0 +1,8 @@
+<div>
+    <div>
+    <input [value]="n1" #num1 (keyup)="setNum1(num1.value)" />
+    <input [value]="n2" #num2 (keyup)="setNum2(num2.value)" />
+    <h1><mark>{{output}}</mark></h1>
+<button (click)="doSumTask()">Add</button>
+</div>
+</div>

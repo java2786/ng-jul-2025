@@ -12,7 +12,8 @@ export class AjaxDemo {
   products = []
 
   loadProducts(){
-    this.http.get("https://fakestoreapi.com/products").subscribe({
+    this.http.get("https://fakestoreapi.com/products")
+    .subscribe({
       next: (res:any)=>{
         console.log(res);
         this.products = res;
