@@ -1,0 +1,55 @@
+{
+  "employees": [
+    {
+      "id": 1,
+      "name": "Suresh Kumar",
+      "email": "suresh.kumar@indianrailways.com",
+      "phone": "9876543210",
+      "department": "Engineering",
+      "position": "Senior Engineer",
+      "salary": 85000,
+      "dateOfJoining": "2020-03-15",
+      "location": "Pune",
+      "isActive": true
+    },
+    {
+      "id": 2,
+      "name": "Ramesh Patel",
+      "email": "ramesh.patel@lic.in",
+      "phone": "9876543211",
+      "department": "Finance",
+      "position": "Accountant",
+      "salary": 65000,
+      "dateOfJoining": "2021-06-20",
+      "location": "Chennai",
+      "isActive": true
+    },
+    {
+      "id": 3,
+      "name": "Mahesh Sharma",
+      "email": "mahesh.sharma@flipkart.com",
+      "phone": "9876543212",
+      "department": "IT",
+      "position": "Software Developer",
+      "salary": 95000,
+      "dateOfJoining": "2019-08-10",
+      "location": "Bangalore",
+      "isActive": false
+    }
+  ],
+  "departments": [
+    { "id": 1, "name": "Engineering" },
+    { "id": 2, "name": "Finance" },
+    { "id": 3, "name": "IT" },
+    { "id": 4, "name": "HR" },
+    { "id": 5, "name": "Sales" }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "username": "admin",
+      "password": "admin123",
+      "role": "admin"
+    }
+  ]
+}
