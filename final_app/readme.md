@@ -39,7 +39,9 @@ ng new employee-management-system
 When prompted:
 - Would you like to add Angular routing? **Yes**
 - Which stylesheet format would you like to use? **CSS**
-
+- Do you want to create a 'zoneless' application without zone.js? **No**
+  - This Angular app requires `zone.js`
+- Which AI tools do you want to configure with Angular best practices? **None**
 ### Step 3: Navigate to Project
 
 ```bash
@@ -181,22 +183,42 @@ touch src/app/pipes/filter.pipe.ts
 touch src/app/directives/highlight.directive.ts
 touch src/app/interceptors/auth.interceptor.ts
 
-# skip
-mkdir src/app/components/employee-list/
-mkdir src/app/components/employee-form/
-mkdir src/app/components/employee-detail/
-mkdir src/app/components/dashboard/
-mkdir src/app/components/login/
-mkdir src/app/components/header/
+# mkdir src/app/components/employee-list/
+# mkdir src/app/components/employee-form/
+# mkdir src/app/components/employee-detail/
+# mkdir src/app/components/dashboard/
+# mkdir src/app/components/login/
+# mkdir src/app/components/header/
 
-# use
-cd src/app/components
-ng g c employee-list
-ng g c employee-form
-ng g c employee-detail
-ng g c dashboard
-ng g c login
-ng g c header
+mkdir src/app/components/employee-list/
+touch src/app/components/employee-list/employee-list.component.ts
+touch src/app/components/employee-list/employee-list.component.html
+touch src/app/components/employee-list/employee-list.component.scss
+
+mkdir src/app/components/employee-form/
+touch src/app/components/employee-form/employee-form.component.ts
+touch src/app/components/employee-form/employee-form.component.html
+touch src/app/components/employee-form/employee-form.component.scss
+
+mkdir src/app/components/employee-detail/
+touch src/app/components/employee-detail/employee-detail.component.ts
+touch src/app/components/employee-detail/employee-detail.component.html
+touch src/app/components/employee-detail/employee-detail.component.scss
+
+mkdir src/app/components/dashboard/
+touch src/app/components/dashboard/dashboard.component.ts
+touch src/app/components/dashboard/dashboard.component.html
+touch src/app/components/dashboard/dashboard.component.scss
+
+mkdir src/app/components/login/
+touch src/app/components/login/login.component.ts
+touch src/app/components/login/login.component.html
+touch src/app/components/login/login.component.scss
+
+mkdir src/app/components/header/
+touch src/app/components/header/header.component.ts
+touch src/app/components/header/header.component.html
+touch src/app/components/header/header.component.scss
 
 ```
 ---
@@ -534,7 +556,7 @@ import { AuthService } from '../../services/auth.service';
   standalone: true,
   imports: [CommonModule, FormsModule],
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
   username: string = '';
@@ -617,7 +639,7 @@ export class LoginComponent {
 </div>
 ```
 
-**src/app/components/login/login.component.css**
+**src/app/components/login/login.component.scss**
 
 ```css
 .login-container {
@@ -728,7 +750,7 @@ import { AuthService } from '../../services/auth.service';
   standalone: true,
   imports: [CommonModule, RouterModule],
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
   constructor(
@@ -766,7 +788,7 @@ export class HeaderComponent {
 </header>
 ```
 
-**src/app/components/header/header.component.css**
+**src/app/components/header/header.component.scss**
 
 ```css
 .header {
@@ -848,7 +870,7 @@ import { Employee } from '../../models/employee.model';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css']
+  styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
   totalEmployees: number = 0;
@@ -943,7 +965,7 @@ export class DashboardComponent implements OnInit {
 </div>
 ```
 
-**src/app/components/dashboard/dashboard.component.css**
+**src/app/components/dashboard/dashboard.component.scss**
 
 ```css
 .dashboard-container {
@@ -1074,11 +1096,11 @@ import { HighlightDirective } from '../../directives/highlight.directive';
     RouterModule, 
     FormsModule, 
     SalaryFormatPipe, 
-    FilterPipe,
+    // FilterPipe,
     HighlightDirective
   ],
   templateUrl: './employee-list.component.html',
-  styleUrls: ['./employee-list.component.css']
+  styleUrls: ['./employee-list.component.scss']
 })
 export class EmployeeListComponent implements OnInit {
   employees: Employee[] = [];
@@ -1109,28 +1131,50 @@ export class EmployeeListComponent implements OnInit {
     }
   }
 
-  sortBy(column: string): void {
-    if (this.sortColumn === column) {
-      this.sortDirection = this.sortDirection === 'asc' ? 'desc' : 'asc';
-    } else {
-      this.sortColumn = column;
-      this.sortDirection = 'asc';
+sortBy(column: string): void {
+  // Check if the same column is clicked for sorting
+  if (this.sortColumn === column) {
+    // Toggle the sort direction between ascending and descending
+    this.sortDirection = this.sortDirection === 'asc' ? 'desc' : 'asc';
+  } else {
+    // If a different column is clicked, set it to sort by
+    this.sortColumn = column;
+    this.sortDirection = 'asc'; // Default to ascending
+  }
+
+  // Sort the employees based on the current column and direction
+  this.filteredEmployees.sort((a, b) => {
+    const valueA = a[column as keyof Employee];
+    const valueB = b[column as keyof Employee];
+
+    // Check if the values are undefined
+    if (valueA === undefined && valueB === undefined) {
+      return 0; // Both are undefined, consider equal
+    }
+    if (valueA === undefined) {
+      return this.sortDirection === 'asc' ? -1 : 1; // Treat undefined as lesser
+    }
+    if (valueB === undefined) {
+      return this.sortDirection === 'asc' ? 1 : -1; // Treat undefined as greater
     }
 
-    this.filteredEmployees.sort((a, b) => {
-      let valueA = a[column as keyof Employee];
-      let valueB = b[column as keyof Employee];
+    // Normalize string values for case-insensitive comparison
+    const normalizedA = typeof valueA === 'string' ? valueA.toLowerCase() : valueA;
+    const normalizedB = typeof valueB === 'string' ? valueB.toLowerCase() : valueB;
 
-      if (typeof valueA === 'string') {
-        valueA = valueA.toLowerCase();
-        valueB = (valueB as string).toLowerCase();
-      }
+    // Compare values based on sort direction
+    if (normalizedA < normalizedB) {
+      return this.sortDirection === 'asc' ? -1 : 1; // Ascending or descending
+    }
+    if (normalizedA > normalizedB) {
+      return this.sortDirection === 'asc' ? 1 : -1; // Ascending or descending
+    }
 
-      if (valueA < valueB) return this.sortDirection === 'asc' ? -1 : 1;
-      if (valueA > valueB) return this.sortDirection === 'asc' ? 1 : -1;
-      return 0;
-    });
-  }
+    // Values are equal
+    return 0;
+  });
+}
+
 
   onSearch(): void {
     if (this.searchText.trim()) {
@@ -1196,8 +1240,9 @@ export class EmployeeListComponent implements OnInit {
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let employee of filteredEmployees" appHighlight highlightColor="#fffacd">
-          <td>{{ employee.id }}</td>
+        <tr *ngFor="let employee of filteredEmployees; let i = index" appHighlight highlightColor="#fffacd">
+          <!-- <td>{{ employee.id }}</td> -->
+          <td>{{ i+1 }}</td>
           <td>{{ employee.name }}</td>
           <td>{{ employee.email }}</td>
           <td>{{ employee.department }}</td>
@@ -1224,7 +1269,7 @@ export class EmployeeListComponent implements OnInit {
 </div>
 ```
 
-**src/app/components/employee-list/employee-list.component.css**
+**src/app/components/employee-list/employee-list.component.scss**
 
 ```css
 .employee-list-container {
@@ -1387,7 +1432,7 @@ import { Employee } from '../../models/employee.model';
   standalone: true,
   imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './employee-form.component.html',
-  styleUrls: ['./employee-form.component.css']
+  styleUrls: ['./employee-form.component.scss']
 })
 export class EmployeeFormComponent implements OnInit {
   employeeForm: FormGroup;
@@ -1609,7 +1654,7 @@ export class EmployeeFormComponent implements OnInit {
 </div>
 ```
 
-**src/app/components/employee-form/employee-form.component.css**
+**src/app/components/employee-form/employee-form.component.scss**
 
 ```css
 .form-container {
@@ -1741,7 +1786,7 @@ import { SalaryFormatPipe } from '../../pipes/salary-format.pipe';
   standalone: true,
   imports: [CommonModule, RouterModule, SalaryFormatPipe],
   templateUrl: './employee-detail.component.html',
-  styleUrls: ['./employee-detail.component.css']
+  styleUrls: ['./employee-detail.component.scss']
 })
 export class EmployeeDetailComponent implements OnInit {
   employee?: Employee;
@@ -1848,7 +1893,7 @@ export class EmployeeDetailComponent implements OnInit {
 </div>
 ```
 
-**src/app/components/employee-detail/employee-detail.component.css**
+**src/app/components/employee-detail/employee-detail.component.scss**
 
 ```css
 .detail-container {
@@ -2054,7 +2099,7 @@ import { HeaderComponent } from './components/header/header.component';
   `,
   styles: []
 })
-export class AppComponent {
+export default class AppComponent {
   title = 'employee-management-system';
 }
 ```
@@ -2085,7 +2130,7 @@ export const appConfig: ApplicationConfig = {
 
 ### 11. Update Global Styles
 
-**src/styles.css**
+**src/styles.scss**
 
 ```css
 * {
