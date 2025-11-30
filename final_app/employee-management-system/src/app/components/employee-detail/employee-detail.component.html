@@ -1,0 +1,66 @@
+<div class="detail-container" *ngIf="employee">
+  <div class="detail-header">
+    <h2>Employee Details</h2>
+    <div class="actions">
+      <a [routerLink]="['/employees', employee.id, 'edit']" class="btn-edit">Edit</a>
+      <button (click)="deleteEmployee()" class="btn-delete">Delete</button>
+      <a routerLink="/employees" class="btn-back">Back to List</a>
+    </div>
+  </div>
+
+  <div class="detail-card">
+    <div class="detail-section">
+      <h3>Personal Information</h3>
+      <div class="info-grid">
+        <div class="info-item">
+          <label>Full Name:</label>
+          <span>{{ employee.name }}</span>
+        </div>
+        <div class="info-item">
+          <label>Email:</label>
+          <span>{{ employee.email }}</span>
+        </div>
+        <div class="info-item">
+          <label>Phone:</label>
+          <span>{{ employee.phone }}</span>
+        </div>
+        <div class="info-item">
+          <label>Location:</label>
+          <span>{{ employee.location }}</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="detail-section">
+      <h3>Employment Information</h3>
+      <div class="info-grid">
+        <div class="info-item">
+          <label>Employee ID:</label>
+          <span>{{ employee.id }}</span>
+        </div>
+        <div class="info-item">
+          <label>Department:</label>
+          <span>{{ employee.department }}</span>
+        </div>
+        <div class="info-item">
+          <label>Position:</label>
+          <span>{{ employee.position }}</span>
+        </div>
+        <div class="info-item">
+          <label>Date of Joining:</label>
+          <span>{{ employee.dateOfJoining | date: 'dd MMM yyyy' }}</span>
+        </div>
+        <div class="info-item">
+          <label>Salary:</label>
+          <span class="salary">{{ employee.salary | salaryFormat }}</span>
+        </div>
+        <div class="info-item">
+          <label>Status:</label>
+          <span class="status" [class.active]="employee.isActive" [class.inactive]="!employee.isActive">
+            {{ employee.isActive ? 'Active' : 'Inactive' }}
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

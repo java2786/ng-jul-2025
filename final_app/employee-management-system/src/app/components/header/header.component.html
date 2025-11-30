@@ -1,0 +1,18 @@
+<header class="header">
+  <div class="container">
+    <div class="logo">
+      <h1>EMS</h1>
+    </div>
+    
+    <nav class="nav" *ngIf="authService.isLoggedIn()">
+      <a routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
+      <a routerLink="/employees" routerLinkActive="active">Employees</a>
+      <a routerLink="/employees/new" routerLinkActive="active">Add Employee</a>
+    </nav>
+
+    <div class="user-section" *ngIf="authService.isLoggedIn()">
+      <span class="username">{{ authService.currentUserValue?.username }}</span>
+      <button (click)="logout()" class="logout-btn">Logout</button>
+    </div>
+  </div>
+</header>

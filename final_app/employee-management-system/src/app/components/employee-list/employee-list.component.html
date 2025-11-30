@@ -1,0 +1,74 @@
+<div class="employee-list-container">
+  <div class="header-section">
+    <h2>Employee List</h2>
+    <a routerLink="/employees/new" class="btn-primary">Add New Employee</a>
+  </div>
+
+  <div class="search-section">
+    <input 
+      type="text" 
+      [(ngModel)]="searchText" 
+      (input)="onSearch()"
+      placeholder="Search by name, department, or location..."
+      class="search-input"
+    >
+  </div>
+
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th (click)="sortBy('id')" appHighlight highlightColor="#f0f0f0">
+            ID
+            <span *ngIf="sortColumn === 'id'">{{ sortDirection === 'asc' ? '↑' : '↓' }}</span>
+          </th>
+          <th (click)="sortBy('name')" appHighlight highlightColor="#f0f0f0">
+            Name
+            <span *ngIf="sortColumn === 'name'">{{ sortDirection === 'asc' ? '↑' : '↓' }}</span>
+          </th>
+          <th (click)="sortBy('email')" appHighlight highlightColor="#f0f0f0">Email</th>
+          <th (click)="sortBy('department')" appHighlight highlightColor="#f0f0f0">
+            Department
+            <span *ngIf="sortColumn === 'department'">{{ sortDirection === 'asc' ? '↑' : '↓' }}</span>
+          </th>
+          <th (click)="sortBy('position')" appHighlight highlightColor="#f0f0f0">Position</th>
+          <th (click)="sortBy('salary')" appHighlight highlightColor="#f0f0f0">
+            Salary
+            <span *ngIf="sortColumn === 'salary'">{{ sortDirection === 'asc' ? '↑' : '↓' }}</span>
+          </th>
+          <th (click)="sortBy('location')" appHighlight highlightColor="#f0f0f0">
+            Location
+            <span *ngIf="sortColumn === 'location'">{{ sortDirection === 'asc' ? '↑' : '↓' }}</span>
+          </th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let employee of filteredEmployees; let i = index" appHighlight highlightColor="#fffacd">
+          <!-- <td>{{ employee.id }}</td> -->
+          <td>{{ i+1 }}</td>
+          <td>{{ employee.name }}</td>
+          <td>{{ employee.email }}</td>
+          <td>{{ employee.department }}</td>
+          <td>{{ employee.position }}</td>
+          <td>{{ employee.salary | salaryFormat }}</td>
+          <td>{{ employee.location }}</td>
+          <td>
+            <span class="status" [class.active]="employee.isActive" [class.inactive]="!employee.isActive">
+              {{ employee.isActive ? 'Active' : 'Inactive' }}
+            </span>
+          </td>
+          <td class="actions">
+            <a [routerLink]="['/employees', employee.id]" class="btn-view">View</a>
+            <a [routerLink]="['/employees', employee.id, 'edit']" class="btn-edit">Edit</a>
+            <button (click)="deleteEmployee(employee.id!)" class="btn-delete">Delete</button>
+          </td>
+        </tr>
+        <tr *ngIf="filteredEmployees.length === 0">
+          <td colspan="9" class="no-data">No employees found</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

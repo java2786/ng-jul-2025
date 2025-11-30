@@ -1,7 +1,7 @@
 {
   "employees": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Suresh Kumar",
       "email": "suresh.kumar@indianrailways.com",
       "phone": "9876543210",
@@ -13,7 +13,7 @@
       "isActive": true
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Ramesh Patel",
       "email": "ramesh.patel@lic.in",
       "phone": "9876543211",
@@ -25,7 +25,6 @@
       "isActive": true
     },
     {
-      "id": 3,
       "name": "Mahesh Sharma",
       "email": "mahesh.sharma@flipkart.com",
       "phone": "9876543212",
@@ -34,19 +33,83 @@
       "salary": 95000,
       "dateOfJoining": "2019-08-10",
       "location": "Bangalore",
-      "isActive": false
+      "isActive": true,
+      "id": "3"
+    },
+    {
+      "id": "1c02",
+      "name": "Dinesh Kumar",
+      "email": "dinesh_k22@gmail.com",
+      "phone": "9879878877",
+      "department": "HR",
+      "position": "Senior",
+      "salary": 65000,
+      "dateOfJoining": "2025-09-02",
+      "location": "Delhi",
+      "isActive": true
+    },
+    {
+      "id": "72bb",
+      "name": "Dinesh Kumar",
+      "email": "dinesh_k22@gmail.com",
+      "phone": "9879878877",
+      "department": "Finance",
+      "position": "Senior",
+      "salary": 88000,
+      "dateOfJoining": "2025-11-05",
+      "location": "Bangalore",
+      "isActive": true
+    },
+    {
+      "id": "fcc5",
+      "name": "Dinesh Kumar",
+      "email": "dinesh_k22@gmail.com",
+      "phone": "9879878877",
+      "department": "IT",
+      "position": "Senior",
+      "salary": 33000,
+      "dateOfJoining": "2025-11-08",
+      "location": "Hyderabad",
+      "isActive": true
+    },
+    {
+      "id": "c7ac",
+      "name": "Dinesh Kumar",
+      "email": "dinesh_k22@gmail.com",
+      "phone": "9879878877",
+      "department": "IT",
+      "position": "Senior",
+      "salary": 33000,
+      "dateOfJoining": "2025-11-08",
+      "location": "Hyderabad",
+      "isActive": true
     }
   ],
   "departments": [
-    { "id": 1, "name": "Engineering" },
-    { "id": 2, "name": "Finance" },
-    { "id": 3, "name": "IT" },
-    { "id": 4, "name": "HR" },
-    { "id": 5, "name": "Sales" }
+    {
+      "id": "1",
+      "name": "Engineering"
+    },
+    {
+      "id": "2",
+      "name": "Finance"
+    },
+    {
+      "id": "3",
+      "name": "IT"
+    },
+    {
+      "id": "4",
+      "name": "HR"
+    },
+    {
+      "id": "5",
+      "name": "Sales"
+    }
   ],
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "username": "admin",
       "password": "admin123",
       "role": "admin"

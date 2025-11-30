@@ -1,0 +1,14 @@
+POST http://localhost:3000/employees
+content-type: application/json
+
+{
+    "name":"Dinesh Kumar",
+    "email":"dinesh_k22@gmail.com",
+    "phone":"9879878877",
+    "department":"IT",
+    "position":"Senior",
+    "salary":33000,
+    "dateOfJoining":"2025-11-08",
+    "location":"Hyderabad",
+    "isActive":true
+}
