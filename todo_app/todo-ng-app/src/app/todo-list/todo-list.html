@@ -1,0 +1,31 @@
+<div class="todo-list-container">  
+  <div class="header-section">  
+    <h2>My Todo List</h2>  
+    <button class="logout-button" (click)="logout()">Logout</button>  
+  </div>  
+    
+  <div *ngIf="loading" class="loading">Loading todos...</div>  
+    
+  <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>  
+    
+  <div class="todos" *ngIf="!loading && !errorMessage">  
+    <div class="todo-item" *ngFor="let todo of todos">  
+      <h3>{{ todo.title }}</h3>  
+      <p><strong>Description:</strong> {{ todo.description }}</p>  
+      <p><strong>Assigned to:</strong> {{ todo.assignedTo }}</p>  
+      <p><strong>Created:</strong> {{ todo.createdDate }}</p>  
+      <p><strong>Status:</strong>   
+        <span [class.completed]="todo.completed">  
+          {{ todo.completed ? 'Completed' : 'Pending' }}  
+        </span>  
+      </p>  
+      <div class="todo-actions">  
+        <button class="edit-button">Edit</button>  
+        <button class="delete-button">Delete</button>  
+        <button class="complete-button" *ngIf="!todo.completed">  
+          Mark Complete  
+        </button>  
+      </div>  
+    </div>  
+  </div>  
+</div>  

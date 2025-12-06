@@ -1,0 +1,48 @@
+// import { Component } from '@angular/core';  
+// import { CommonModule } from '@angular/common';  
+// import { Router } from '@angular/router';  
+// import { Todo } from '../models/todo';
+  
+// @Component({  
+//   selector: 'app-todo-list',  
+//   standalone: true,  
+//   imports: [CommonModule],  
+//   templateUrl: './todo-list.html',  
+//   styleUrls: ['./todo-list.css']  
+// })  
+// export class TodoList {  
+//   list: any[] = [];
+//   todos: Todo[] = [  
+//     {  
+//       id: 1,  
+//       title: 'Complete Angular Tutorial',  
+//       description: 'Finish all steps of the todo app tutorial',  
+//       completed: false,  
+//       assignedTo: 'Suresh',  
+//       createdDate: '2025-01-15'  
+//     },  
+//     {  
+//       id: 2,  
+//       title: 'Book Train Ticket',  
+//       description: 'Book ticket from Chennai to Pune on Indian Railways website',  
+//       completed: false,  
+//       assignedTo: 'Ramesh',  
+//       createdDate: '2025-01-16'  
+//     },  
+//     {  
+//       id: 3,  
+//       title: 'Pay LIC Premium',  
+//       description: 'Pay monthly LIC premium before due date',  
+//       completed: true,  
+//       assignedTo: 'Mahesh',  
+//       createdDate: '2025-01-14'  
+//     }  
+//   ];
+//   constructor(private router: Router) {
+//   }  
+  
+//   logout() {  
+//     // delete
+//     this.router.navigate(['/login']);  
+//   }  
+// }  
