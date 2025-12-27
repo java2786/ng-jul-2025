@@ -1,0 +1,6 @@
+<button (click)="increase()">Increment</button>
+<div>Current Count : {{count$ | async}}</div>
+<button (click)="decrease()">Decrement</button>
+<button (click)="reset()">Reset</button>
+<br/>
+<input #n (keyup)="reset(+n.value)" type="number" />
